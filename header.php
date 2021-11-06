@@ -16,7 +16,8 @@
         <div class="container-fluid gx-5 py-3">
             <div class="row">
                 <div class="encabezado__hamburguesa col-2">
-                    <a href="<?php echo home_url(); ?>">
+                     <!--<?php the_custom_logo(); ?>-->
+                    <a href="#">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-menu.svg" alt="menu icon">
                     </a>
                 </div>
@@ -26,14 +27,11 @@
                     </a>
                 </div>
                 <div class="encabezado__menu col-6 col-md-5">
-                    <ul>
-                        <li class="encabezado__item current"><a href="#">All</a></li>
-                        <li class="encabezado__item"><a href="#">Clothes</a></li>
-                        <li class="encabezado__item"><a href="#">Electronics</a></li>
-                        <li class="encabezado__item"><a href="#">Furniture</a></li>
-                        <li class="encabezado__item"><a href="#">Toys</a></li>
-                        <li class="encabezado__item"><a href="#">Others</a></li>
-                    </ul>
+                    <?php wp_nav_menu(
+                        array(
+                            "menu" => 'menu-principal'
+                        )
+                    ); ?>
                 </div>
                 <div class="encabezado__cart col-5 col-md-1">
                     <a href="sign_in.html" class="encabezado_sign-in">
@@ -45,14 +43,11 @@
                 </div>
             </div>
             <div class="encabezado__menu-responsive">
-                <ul>
-                    <li class="encabezado__item current"><a href="#">All</a></li>
-                    <li class="encabezado__item"><a href="#">Clothes</a></li>
-                    <li class="encabezado__item"><a href="#">Electronics</a></li>
-                    <li class="encabezado__item"><a href="#">Furniture</a></li>
-                    <li class="encabezado__item"><a href="#">Toys</a></li>
-                    <li class="encabezado__item"><a href="#">Others</a></li>
-                </ul>
+            <?php wp_nav_menu(
+                        array(
+                            "menu" => 'menu-resposive'
+                        )
+                    ); ?>
             </div>
         </div>
     </header>

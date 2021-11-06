@@ -1,5 +1,7 @@
 <?php
 
+/*Carga de estilos*/
+
 function plz_assets(){
 
     wp_register_style("google-fonts", "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700", array(), false, 'all');
@@ -16,6 +18,8 @@ function plz_assets(){
 
 add_action("wp_enqueue_scripts","plz_assets");
 
+/*Dinamismo en el body*/
+
 function plz_analitics(){
     ?>
         <h1>Analitics</h1>
@@ -24,11 +28,32 @@ function plz_analitics(){
 
 add_action("wp_body_open","plz_analitics");
 
+/*Dinamismo en el titulo, imagen y logo*/
+
 function plz_theme_supports(){
     add_theme_support('title-tag');
-
+    add_theme_support('post-thumbnails');
+    add_theme_support('custom-logo',
+        array(
+            "width" => 170,
+            "height" => 35,
+            "flex-width" => true,
+            "flex-height" => true,
+        )
+    );
 }
 
 add_action("after_setup_theme","plz_theme_supports");
 
+/*Menu*/
 
+function plz_add_menus(){
+    register_nav_menus(
+        array(
+            'menu-principal' => "Menu Principal",
+            'menu-resposive' => "Menu Responsive"
+        )
+    );
+}
+
+add_action("after_setup_theme","plz_add_menus");
