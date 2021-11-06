@@ -34,12 +34,12 @@ function plz_theme_supports(){
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo',
-        array(
-            "width" => 170,
-            "height" => 35,
-            "flex-width" => true,
-            "flex-height" => true,
-        )
+    array(
+        "width" => 170,
+        "height" => 35,
+        "flex-width" => true,
+        "flex-height" => true,
+    )
     );
 }
 
@@ -57,3 +57,19 @@ function plz_add_menus(){
 }
 
 add_action("after_setup_theme","plz_add_menus");
+
+/*Widget*/
+
+function plz_add_sidebar(){
+    register_sidebar(
+        array(
+            'name' => 'Pie de pagina',
+            'id' => 'pie-pagina',
+            'before_widget' => '',
+            'after_widget' => ''
+        )
+    );
+} 
+
+add_action("widgets_init","plz_add_sidebar");
+
