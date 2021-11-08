@@ -142,3 +142,14 @@ function plz_add_to_cart() {
 
 add_action("woocommerce_after_shop_loop_item", "plz_add_to_cart", 10);
 
+/*boton de consulta a whats*/
+
+function plz_ws_share(){
+    global $product;
+    ?>
+        <a class="productos__ws" href="https://wa.me/5533604109?text=Quisiera%20informacion%20este%20producto: <?php echo $product->get_permalink(); ?>" target="_blank">
+            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/ws.svg" alt="whatsapp">
+        </a>
+    <?php
+}
+add_action("woocommerce_after_shop_loop_item", "plz_ws_share", 11);
