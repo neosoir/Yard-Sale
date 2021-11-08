@@ -121,4 +121,24 @@ add_action("plz_signin","plz_add_to_sign_in_menu");
  
 add_action("plz_signin" ,"storefront_product_search"); 
 
+/*remover parte del hook de añadair al carrito*/
+
+remove_action("woocommerce_after_shop_loop_item", "woocommerce_template_loop_add_to_cart", 10);
+
+
+/*poner nuestro icono */
+
+
+function plz_add_to_cart() {
+    global $product;
+    ?>
+        <a href="<?php echo $product->add_to_cart_url(); ?>" class="productos__add-to-cart">
+            <img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/add-to-cart.svg" alt="agragar al carrito">
+        </a>
+    <?php
+}
+
+/*poner el nuevo icono el espacio vacio*/
+
+add_action("woocommerce_after_shop_loop_item", "plz_add_to_cart", 10);
 

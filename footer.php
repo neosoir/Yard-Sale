@@ -7,7 +7,7 @@
     <footer class="text-center my-4">
         <?php dynamic_sidebar('pie-pagina') ?>
     </footer>
-    
+
     <?php do_action( 'storefront_after_footer' ); ?>
 
 <script src="assets/js/script.js"></script>
@@ -16,3 +16,4 @@
 </body>
 
 </html>
+
