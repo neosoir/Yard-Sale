@@ -105,7 +105,8 @@ function plz_add_custom_post_type(){
     register_post_type('producto',$args);
 }
 
-add_action("init","plz_add_custom_post_type");
+/*Carga del custom post type de productos*/
+//add_action("init","plz_add_custom_post_type");
 
 /*Logica para el login*/
 
