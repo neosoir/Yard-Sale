@@ -116,5 +116,8 @@ function plz_add_to_sign_in_menu(){
 }
 add_action("plz_signin","plz_add_to_sign_in_menu");
 
+/*Funcionalidad heredada del tema padre*/
+ 
+add_action("plz_signin" ,"storefront_product_search"); 
 
 
