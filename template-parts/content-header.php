@@ -4,12 +4,12 @@
                 <div class="encabezado__hamburguesa col-2">
                      <!--<?php the_custom_logo(); ?>-->
                     <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-menu.svg" alt="menu icon">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-menu.svg" alt="menu icon">
                     </a>
                 </div>
                 <div class="enbezado__logo col-5 col-md-2 px-2 px-md-4">
                     <a href="/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" width="100%" alt="Yard Sales">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" width="100%" alt="Yard Sales">
                     </a>
                 </div>
                 <div class="encabezado__menu col-6 col-md-4">
@@ -24,7 +24,7 @@
                         <?php do_action("plz_signin"); ?>
                     </a>
                     <a href="#" class="encabezado__link active">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/header-empty-card.svg" alt="cart">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/header-empty-card.svg" alt="cart">
                     </a>
                 </div>
             </div>
